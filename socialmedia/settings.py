@@ -42,10 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.humanize',
     'django.contrib.staticfiles',
-    'Home.apps.HomeConfig',
+    'Home',
     'login',
-    # 3rd party
-    # 'channels',
+ 
 
 ]
 
@@ -78,11 +77,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'socialmedia.wsgi.application'
-# ASGI_APPLICATION = 'socialmedia.routing.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -97,7 +92,7 @@ DATABASES = {
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-# edited for channel layers
+
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
@@ -118,9 +113,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
 
-# edited for channels
-MESSAGES_TO_LOAD = 15
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -131,18 +123,10 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
-
 STATIC_URL = '/static/'
 
 
-
-LOGIN_REDIRECT_URL = '/'
-LOGIN_URL = '/login/'
 # email verifictaion
-
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_USE_TLS=True
 EMAIL_PORT=587
