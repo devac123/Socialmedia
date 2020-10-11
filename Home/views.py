@@ -17,7 +17,7 @@ with open("Home/config.json",'r') as auther:
 
 def index(request):
     var = {'f':'fi'}
-    return  render(request , 'home/index.html',var)
+    return  render(request , 'registration/login.html',var)
 
 def sign_up(request):
     var = {'f':'fi'}
