@@ -3,16 +3,9 @@ from . import views
 from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
 
-# edited for channels
-from rest_framework.routers import DefaultRouter
-from login.api import MessageModelViewSet, UserModelViewSet
-router = DefaultRouter()
-router.register('message', MessageModelViewSet, basename='message-api')
-router.register('user', UserModelViewSet, basename='user-api')
+
 
 urlpatterns = [
-    # edeited for channels
-    path('api/v1/', include(router.urls)),
     path('', views.login,name = "login" ),
     path('logout/', views.logout_view, name = 'logout_view'),
     path('forgot/', views.forgot_view, name = 'forgot_view'),

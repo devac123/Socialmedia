@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'Home.apps.HomeConfig',
     'login',
     # 3rd party
-    'channels',
+    # 'channels',
 
 ]
 
@@ -78,7 +78,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'socialmedia.wsgi.application'
-ASGI_APPLICATION = 'socialmedia.routing.application'
+# ASGI_APPLICATION = 'socialmedia.routing.application'
+
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -95,21 +96,22 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
-AUTH_PASSWORD_VALIDATORS = []
+AUTH_PASSWORD_VALIDATORS = [
 # edited for channel layers
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-#     },
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-#     },
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-#     },
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-#     },
-# end edit
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+]
+
 
 
 # Internationalization
@@ -154,14 +156,3 @@ EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
-# Import local_settings.py
-try:
-    from local_settings import *
-except ImportError:
-    pass
-
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer"
-    }
-}
