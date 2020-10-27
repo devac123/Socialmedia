@@ -1,7 +1,7 @@
 # Friend-finder
-#Python version 3.7.4
-#django version 3.1.2
+# Python version 3.7.4
+# django version 3.1.2
 extra modules
-#pillow
-#channels
-#Django restframework
+# pillow
+# channels
+# Django restframework
